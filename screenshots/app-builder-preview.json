@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Tinderbox",
+      "hasCanvas": false,
+      "bodyTextLen": 6436,
+      "bodyTextHash": "9e238ee085db29d93e0f04e7c5e868f7c0609f80dc95e54b413658ac6d427836",
+      "bodyTextPrefix": "Skip to the lesson FIELD GUIDE Tinderbox 0 of 14 practiced Fourt",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Tinderbox",
+      "hasCanvas": false,
+      "bodyTextLen": 5880,
+      "bodyTextHash": "067e80f3971e106499acd2b4d4aea35e710290e694a29016f820168caba1143d",
+      "bodyTextPrefix": "Skip to the lesson FIELD GUIDE Tinderbox 0 of 14 practiced Fourt",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

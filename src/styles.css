@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", "Iowan Old Style", Palatino, "Palatino Linotype", serif;
+  --font-sans: "Source Sans 3", "Segoe UI", sans-serif;
+
+  --color-ink: #1a1612;
+  --color-bark: #2c241c;
+  --color-cream: #f4eee4;
+  --color-cream-2: #e8dccb;
+  --color-cream-dim: #c9b8a2;
+  --color-ink-soft: #5e5348;
+  --color-ember: #e8873a;
+  --color-ember-mid: #9a4014;
+  --color-ember-deep: #7a3010;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1.25rem;
+
+  --shadow-sheet: 0 0 0 1px rgb(26 22 18 / 0.06), 0 18px 44px rgb(0 0 0 / 0.28);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--color-ink);
+    color: var(--color-cream);
+    font-family: var(--font-sans);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled),
+  summary {
+    cursor: pointer;
+  }
+
+  summary {
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ember);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--color-ember);
+    color: var(--color-ink);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  .btn {
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: var(--radius-md);
+    padding-inline: 1rem;
+    font-weight: 600;
+    transition: background-color 180ms ease-out, color 180ms ease-out;
+  }
+
+  .btn:disabled {
+    opacity: 0.45;
+  }
+
+  .btn-ember {
+    background: var(--color-ember-deep);
+    color: var(--color-cream);
+  }
+
+  .btn-ember:hover:not(:disabled) {
+    background: var(--color-ember-mid);
+  }
+
+  .btn-quiet {
+    background: transparent;
+    color: var(--color-ink);
+    box-shadow: inset 0 0 0 1px rgb(26 22 18 / 0.16);
+  }
+
+  .btn-quiet:hover:not(:disabled) {
+    background: var(--color-cream-2);
+  }
+
+  .btn-night {
+    background: transparent;
+    color: var(--color-cream);
+    box-shadow: inset 0 0 0 1px rgb(244 238 228 / 0.2);
+  }
+
+  .btn-night:hover:not(:disabled) {
+    background: var(--color-bark);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lesson-swap {
+    animation: none !important;
+  }
+
+  .btn {
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lesson-swap {
+    animation: lesson-rise 220ms ease-out;
+  }
+}
+
+@keyframes lesson-rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
