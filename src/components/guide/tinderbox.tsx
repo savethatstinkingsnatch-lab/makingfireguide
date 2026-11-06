@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { craft, eraGroups, isMethod, lineEntries, methods, type Craft, type Method } from "@/data/guide";
+import { craft, eraGroups, indoorWarning, isMethod, isPage, methods, pages, readingOrder, type Craft, type GuidePage, type Method } from "@/data/guide";
 import { statusLabel, useProgress, useRehydrated, type Status } from "@/lib/progress";
 import { Lesson } from "@/components/guide/lesson";
 
@@ -34,7 +34,7 @@ function Dot({ status, onLight }: { status: Status; onLight: boolean }) {
   );
 }
 
-function entryNumber(entry: Craft | Method, sort: "age" | "practice", practiceIndex: number) {
+function entryNumber(entry: Craft | Method | GuidePage, sort: "age" | "practice", practiceIndex: number) {
   if (!isMethod(entry)) return "·";
   if (sort === "practice") return String(practiceIndex).padStart(2, "0");
   return String(entry.number).padStart(2, "0");
@@ -50,7 +50,7 @@ export function Tinderbox() {
   const resetAll = useProgress((state) => state.resetAll);
   const [confirmReset, setConfirmReset] = useState(false);
 
-  const entries = lineEntries(sort);
+  const entries = readingOrder(sort);
   const { practiced, reliable } = tally(lessons);
   const safeActive = entries.some((entry) => entry.id === activeId) ? activeId : craft.id;
 
@@ -69,7 +69,7 @@ export function Tinderbox() {
       const tag = target?.tagName;
       if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || target?.isContentEditable) return;
       if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
-      const list = lineEntries(useProgress.getState().sort);
+      const list = readingOrder(useProgress.getState().sort);
       const index = list.findIndex((entry) => entry.id === useProgress.getState().activeId);
       const nextIndex = event.key === "ArrowRight" ? index + 1 : index - 1;
       const next = list[nextIndex];
@@ -107,6 +107,10 @@ export function Tinderbox() {
               ) : null}
             </div>
           </div>
+          <p className="mt-3 max-w-xl text-sm leading-snug text-cream">
+            The Education Revolution Pocket Guide, Volume 21: Making Fire
+          </p>
+          <p className="text-sm text-cream-dim">by Blue and the Awesome Dudes</p>
           <p className="mt-3 max-w-xl leading-relaxed text-cream-dim">
             Fourteen ways to make a fire, set from the oldest to the newest. Read it as history. Practice it as a craft.
           </p>
@@ -114,18 +118,28 @@ export function Tinderbox() {
         </div>
       </header>
 
-      <details className="border-y border-cream/15 px-4 py-1 sm:px-6">
+      <aside className="border-y border-ember/40 bg-bark px-4 py-3 sm:px-6">
+        <div className="mx-auto max-w-6xl">
+          <p className="text-xs font-semibold tracking-widest text-ember uppercase">Never burn indoors</p>
+          <p className="mt-1 max-w-3xl text-sm leading-relaxed text-cream">{indoorWarning}</p>
+        </div>
+      </aside>
+
+      <details className="border-b border-cream/15 px-4 py-1 sm:px-6">
         <summary className="mx-auto flex min-h-11 max-w-6xl items-center text-sm leading-snug">
           Practice outdoors, only where a fire is legal. Water before flame.
         </summary>
         <div className="mx-auto max-w-6xl pb-4 text-sm leading-relaxed text-cream-dim">
           <ul className="flex max-w-prose list-disc flex-col gap-2 pl-4">
-            <li>Burn bans, campground rules, and the landowner all count. If you are unsure, do not light it.</li>
-            <li>Clear to mineral soil or use a fire pan. No low branches. No dry grass. On a windy or crackling-dry day, practice motions with no flame.</li>
+            <li>An adult is always in charge of the fire. Children may gather wood and build cold lays. An adult holds the match, ferro rod, lighter, or lens.</li>
+            <li>Keep pets and small children a safe distance from the fire and from hot pans and coals.</li>
+            <li>Never leave a fire unattended.</li>
+            <li>Keep fires well away from houses, decks, tents, fences, dry brush, and overhanging branches.</li>
+            <li>Check local burn bans and permits every time. A ban means no flame practice that day.</li>
+            <li>Clear to mineral soil or use a fire pan. On a windy or crackling-dry day, practice motions with no flame.</li>
             <li>Set water beside you before the first spark. Extinguish by drowning, stirring, and drowning again. Cold to the back of the hand.</li>
             <li>Knives cut away from the body. Coals move on sticks, not fingers. A char-cloth tin can flare if you open it hot.</li>
             <li>Chemical mixes, batteries shorted through steel wool, and homemade accelerants are not in this guide.</li>
-            <li>Teaching someone young: they may build cold lays. You hold the ignition.</li>
           </ul>
         </div>
       </details>
@@ -188,7 +202,9 @@ export function Tinderbox() {
                 const selected = entry.id === safeActive;
                 const status: Status = lessons[entry.id]?.status ?? "new";
                 let groupLabel: string | null = null;
-                if (sort === "age") {
+                if (isPage(entry)) {
+                  if (entry.id === pages[0]?.id) groupLabel = "This volume";
+                } else if (sort === "age") {
                   if (!isMethod(entry)) groupLabel = "Shared craft";
                   else {
                     const previousMethod = entries
@@ -229,7 +245,7 @@ export function Tinderbox() {
                       <span className="min-w-0 flex-1">
                         <span className="block font-semibold">{entry.name}</span>
                         <span className={cn("block text-sm", selected ? "text-ink-soft" : "text-cream-dim")}>
-                          {isMethod(entry) ? entry.era : "Lays, tinder, and putting it out"}
+                          {isMethod(entry) ? entry.era : isPage(entry) ? entry.navNote : "Lays, tinder, and putting it out"}
                         </span>
                       </span>
                       <Dot status={status} onLight={selected} />
@@ -267,8 +283,11 @@ export function Tinderbox() {
 
         <main className="min-w-0 px-4 py-4 sm:px-6 lg:overflow-y-auto lg:py-6 lg:pr-6 lg:pl-2">
           <Lesson />
-          <p className="mx-auto mt-6 mb-10 max-w-prose text-sm leading-relaxed text-cream-dim">
+          <p className="mx-auto mt-6 mb-4 max-w-prose text-sm leading-relaxed text-cream-dim">
             The newest method is not the best one. It is only the latest. Know one flame, and one spark that still works when the battery is dead.
+          </p>
+          <p className="mx-auto mb-10 max-w-prose text-sm leading-relaxed text-cream-dim">
+            Privacy: This guide does not collect your name, email, or any personal information. Your practice log is saved only on your own device.
           </p>
         </main>
       </div>

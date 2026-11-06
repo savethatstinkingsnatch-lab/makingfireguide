@@ -2,7 +2,7 @@ import { i as __toESM } from "../_runtime.mjs";
 import { K as require_react, b as require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
 import { i as Check, n as ChevronRight, r as ChevronLeft } from "../_libs/lucide-react.mjs";
 import { n as create, t as persist } from "../_libs/zustand.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-SSSd4K7T.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-B5CwOyJh.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var difficultyLabel = [
@@ -94,7 +94,7 @@ var craft = {
 		},
 		{
 			title: "Put it out like you mean it",
-			body: "Drown, stir, drown. Feel for heat with the back of your hand, close, but not in the ash. Cold means cold, not 'I don't see a glow.' Scatter only if the place asks you to. Pack out what you carried in."
+			body: "Drown, stir, drown. Feel for heat with the back of your hand, close, but not in the ash. Cold means cold, not 'I don't see a glow.' Scatter only if the place asks you to. Pack out what you carried in. Never leave a fire, even a small one, without a person watching it. If you have to walk away, put it out first. Drown, stir, drown, and feel for cold with the back of your hand."
 		}
 	],
 	faults: [
@@ -843,7 +843,7 @@ var methods = [
 			],
 			success: "Smoke from a spot you held still, or a clear note that the day was never going to work."
 		},
-		caution: "The focal spot can burn skin and can land somewhere you did not intend if you swing the lens around. Cap it or pocket it when you are not using it. Do not look through it at the sun."
+		caution: "The focal spot can burn skin and can land somewhere you did not intend if you swing the lens around. Cap it or pocket it when you are not using it. Do not look through it at the sun. A magnifying glass can burn skin in seconds. Cap it or keep it in a sleeve when you are not using it. Do not leave it where sun can shine through it onto cloth, a car seat, or dry grass. A flat signal mirror is for flashing help. It is not a fire starter by itself."
 	},
 	{
 		id: "piston",
@@ -1060,7 +1060,7 @@ var methods = [
 			],
 			success: "Three controlled lights with the safe stroke, and one of them not from petroleum jelly."
 		},
-		caution: "A knife spine is still steel. Know where it would go if it slipped. Magnesium bars, the camping blocks that are half soft metal and half ferro rod, throw shavings that burn white-hot. Scrape them away from you, a small pile only, and do not stare from an inch away. No dry grass around that pile."
+		caution: "A knife spine is still steel. Know where it would go if it slipped. Scrape so sparks fly away from your face, not toward your eyes. Wear eye protection if sparks come toward you. Magnesium bars, the camping blocks that are half soft metal and half ferro rod, throw shavings that burn white-hot. Scrape them away from you, a small pile only, and do not stare from an inch away. No dry grass around that pile."
 	},
 	{
 		id: "lighter",
@@ -1209,14 +1209,99 @@ var methods = [
 		caution: "An arc will bite skin and will light fumes you did not mean to light, including stove fuel in a tent. Keep it off until it is at the tinder. Do not carry a lithium battery loose with keys and coins. A piezo lighter is still a fuel lighter: no pouring, no leaking, no flame in a fuel cloud."
 	}
 ];
+var indoorWarning = "Never light charcoal, a hibachi, a campfire, or any open flame indoors, in a tent, in a camper, or in a garage. Burning charcoal and wood make carbon monoxide, a gas you cannot see or smell, and it can kill people and pets. Cook and burn only outdoors with fresh air. A carbon monoxide alarm is for the house. It is not permission to burn charcoal inside.";
+var pages = [
+	{
+		id: "start",
+		name: "Start here",
+		epithet: "Seven steps before you chase an older method.",
+		navNote: "First visit",
+		summary: "New to making fire? Read this page, then the craft chapter. The whole guide is free.",
+		sections: [{
+			title: "New to making fire?",
+			ordered: true,
+			items: [
+				"Read the craft chapter first.",
+				"Check burn rules for your place today.",
+				"Set water down before anything sparks.",
+				"Build the tinder, kindling, and fuel piles before you light.",
+				"Practice one easy method (match or ferro rod) until it is boring.",
+				"Only then try older methods.",
+				"Put every fire all the way out."
+			]
+		}]
+	},
+	{
+		id: "kit",
+		name: "Starter kit",
+		epithet: "What belongs in a beginner box for this volume.",
+		navNote: "Membership boxes",
+		summary: "A good beginner kit for this volume. Practice the craft chapter with this kit before you try friction methods.",
+		sections: [{
+			title: "A good beginner kit for this volume",
+			items: [
+				"A ferrocerium rod with a scraper (works when wet; easy to mail).",
+				"Storm or 'forever' matches in a waterproof case, OR skip mailed matches and use the ferro rod (see Shipping note).",
+				"Dry tinder: cotton balls, jute twine, cedar curls, or commercial tinder tabs that are legal to ship.",
+				"A small signal mirror.",
+				"A magnifying glass with a cover.",
+				"A printed safety card: water first, clear ground, adult in charge, drown-stir-drown, never burn indoors."
+			],
+			paragraphs: ["Practice the craft chapter with this kit before you try friction methods."]
+		}, {
+			title: "Shipping / hazmat",
+			paragraphs: ["If you mail kit boxes in the United States, matches and many solid fuel tabs are often treated as hazardous materials and may not go in ordinary USPS mail. Rules change, so check USPS Publication 52 and your shipper before you pack a box. Ferro rods, cotton or jute tinder, signal mirrors, and covered magnifying glasses are usually the safer items to mail. Sell matches or fuel tabs only through a shipper that allows them, or as local pickup. Never put lighter fluid or loose lithium batteries in a surprise box."]
+		}]
+	},
+	{
+		id: "glossary",
+		name: "Glossary",
+		epithet: "The words this guide uses, in plain language.",
+		navNote: "Words",
+		summary: "Short meanings for the words you will meet in the lessons.",
+		sections: [{
+			title: "Words",
+			items: [
+				"Tinder: the finest, fluffiest dry material that catches a spark or coal.",
+				"Kindling: pencil- to thumb-thick dry sticks that take the flame from the tinder.",
+				"Fuel: the larger wood that keeps the fire going.",
+				"Coal / ember: a glowing piece of fuel without a flame.",
+				"Lay: how you stack the wood (teepee, lean-to, top-down).",
+				"Ferrocerium (ferro rod): a man-made spark metal used in modern rods and lighter 'flints'.",
+				"Char cloth: cotton or linen cooked in a tin until it catches a spark easily.",
+				"Burn ban: a rule that forbids open flames for a time or place.",
+				"Carbon monoxide: a deadly gas from burning charcoal or fuel with too little air."
+			]
+		}]
+	},
+	{
+		id: "about",
+		name: "About",
+		epithet: "What this volume is, and what it is not.",
+		navNote: "Disclaimer",
+		summary: "Part of The Education Revolution pocket guide series.",
+		sections: [{
+			title: "About and disclaimer",
+			paragraphs: ["This pocket guide is for learning outdoors where fire is legal. It is not a permit, and it is not a substitute for local fire rules. You are responsible for every fire you light. Blue and the Awesome Dudes are not responsible for burns, wildfire, property damage, injury, or death. Part of The Education Revolution pocket guide series."]
+		}]
+	}
+];
 function isMethod(entry) {
 	return "number" in entry;
+}
+function isPage(entry) {
+	return "sections" in entry;
 }
 function lineEntries(sort) {
 	if (sort === "age") return [craft, ...methods];
 	return [craft, ...[...methods].sort((a, b) => a.practiceRank - b.practiceRank)];
 }
+function readingOrder(sort) {
+	return [...pages, ...lineEntries(sort)];
+}
 function findEntry(id) {
+	const page = pages.find((item) => item.id === id);
+	if (page) return page;
 	if (id === craft.id) return craft;
 	return methods.find((method) => method.id === id) ?? craft;
 }
@@ -1553,10 +1638,92 @@ function Lesson() {
 			block: "start"
 		});
 	}, [entry.id]);
-	const entries = lineEntries(sort);
+	const entries = readingOrder(sort);
 	const index = entries.findIndex((item) => item.id === entry.id);
 	const prev = index > 0 ? entries[index - 1] : void 0;
 	const next = index >= 0 && index < entries.length - 1 ? entries[index + 1] : void 0;
+	const pager = /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
+		className: "mt-8 flex flex-col gap-2 border-t border-ink/10 pt-4 sm:flex-row sm:justify-between",
+		"aria-label": "Along the line",
+		children: [prev ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+			type: "button",
+			className: "btn btn-quiet w-full sm:w-auto",
+			onClick: () => setActive(prev.id),
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronLeft, {
+				className: "size-4",
+				"aria-hidden": true
+			}), prev.name]
+		}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "hidden sm:block" }), next ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+			type: "button",
+			className: "btn btn-ember w-full sm:ml-auto sm:w-auto",
+			onClick: () => setActive(next.id),
+			children: [next.name, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronRight, {
+				className: "size-4",
+				"aria-hidden": true
+			})]
+		}) : null]
+	});
+	if (isPage(entry)) return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", {
+		id: "lesson-top",
+		className: "lesson-swap scroll-mt-24 rounded-xl bg-cream text-ink shadow-sheet",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
+			className: "border-b border-ink/10 px-5 py-6 sm:px-8",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "text-sm font-semibold tracking-widest text-ember-deep uppercase",
+					children: "This volume"
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+					ref: headingRef,
+					tabIndex: -1,
+					className: "mt-2 font-display text-4xl outline-none sm:text-5xl",
+					children: entry.name
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "mt-2 font-display text-xl text-ink-soft italic",
+					children: entry.epithet
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "mt-4 max-w-prose text-lg leading-relaxed",
+					children: entry.summary
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "mt-6 flex flex-wrap items-center gap-2",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "rounded-md bg-cream-2 px-3 py-2 text-sm font-semibold",
+						children: statusLabel[status]
+					}), status === "new" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						type: "button",
+						className: "btn btn-quiet",
+						onClick: () => markStudied(entry.id),
+						children: "Mark as read"
+					}) : null]
+				})
+			]
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "px-5 py-6 sm:px-8",
+			children: [entry.sections.map((section) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+				className: "mt-8 first:mt-0",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+						className: "font-display text-2xl",
+						children: section.title
+					}),
+					section.items ? section.ordered ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ol", {
+						className: "mt-3 flex max-w-prose list-decimal flex-col gap-2 pl-5 leading-relaxed",
+						children: section.items.map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: item }, item))
+					}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
+						className: "mt-3 flex max-w-prose list-disc flex-col gap-2 pl-5 leading-relaxed",
+						children: section.items.map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: item }, item))
+					}) : null,
+					section.paragraphs?.map((paragraph) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "mt-3 max-w-prose leading-relaxed",
+						children: paragraph
+					}, paragraph.slice(0, 24)))
+				]
+			}, section.title)), pager]
+		})]
+	}, entry.id);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", {
 		id: "lesson-top",
 		className: "lesson-swap scroll-mt-24 rounded-xl bg-cream text-ink shadow-sheet",
@@ -1621,8 +1788,15 @@ function Lesson() {
 					className: "max-w-prose leading-relaxed text-ink-soft",
 					children: method.place
 				}) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+						className: "max-w-prose border-l-2 border-ember-deep bg-cream-2 px-4 py-3 text-sm leading-relaxed",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "font-semibold tracking-wide uppercase",
+							children: "Never burn indoors. "
+						}), indoorWarning]
+					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-						className: "font-display text-2xl",
+						className: "mt-8 font-display text-2xl",
 						children: "Read by age. Practice by this path."
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
@@ -1725,27 +1899,7 @@ function Lesson() {
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionTitle, { children: "Practice log" }),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PracticeLog, { id: entry.id }),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
-					className: "mt-8 flex flex-col gap-2 border-t border-ink/10 pt-4 sm:flex-row sm:justify-between",
-					"aria-label": "Along the line",
-					children: [prev ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-						type: "button",
-						className: "btn btn-quiet w-full sm:w-auto",
-						onClick: () => setActive(prev.id),
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronLeft, {
-							className: "size-4",
-							"aria-hidden": true
-						}), prev.name]
-					}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "hidden sm:block" }), next ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-						type: "button",
-						className: "btn btn-ember w-full sm:ml-auto sm:w-auto",
-						onClick: () => setActive(next.id),
-						children: [next.name, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronRight, {
-							className: "size-4",
-							"aria-hidden": true
-						})]
-					}) : null]
-				})
+				pager
 			]
 		})]
 	}, entry.id);
@@ -1786,7 +1940,7 @@ function Tinderbox() {
 	const setSort = useProgress((state) => state.setSort);
 	const resetAll = useProgress((state) => state.resetAll);
 	const [confirmReset, setConfirmReset] = (0, import_react.useState)(false);
-	const entries = lineEntries(sort);
+	const entries = readingOrder(sort);
 	const { practiced, reliable } = tally(lessons);
 	const safeActive = entries.some((entry) => entry.id === activeId) ? activeId : craft.id;
 	(0, import_react.useEffect)(() => {
@@ -1808,7 +1962,7 @@ function Tinderbox() {
 			const tag = target?.tagName;
 			if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || target?.isContentEditable) return;
 			if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
-			const list = lineEntries(useProgress.getState().sort);
+			const list = readingOrder(useProgress.getState().sort);
 			const index = list.findIndex((entry) => entry.id === useProgress.getState().activeId);
 			const next = list[event.key === "ArrowRight" ? index + 1 : index - 1];
 			if (!next) return;
@@ -1863,6 +2017,14 @@ function Tinderbox() {
 							})]
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "mt-3 max-w-xl text-sm leading-snug text-cream",
+							children: "The Education Revolution Pocket Guide, Volume 21: Making Fire"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "text-sm text-cream-dim",
+							children: "by Blue and the Awesome Dudes"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 							className: "mt-3 max-w-xl leading-relaxed text-cream-dim",
 							children: "Fourteen ways to make a fire, set from the oldest to the newest. Read it as history. Practice it as a craft."
 						}),
@@ -1870,8 +2032,21 @@ function Tinderbox() {
 					]
 				})
 			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("aside", {
+				className: "border-y border-ember/40 bg-bark px-4 py-3 sm:px-6",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "mx-auto max-w-6xl",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "text-xs font-semibold tracking-widest text-ember uppercase",
+						children: "Never burn indoors"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "mt-1 max-w-3xl text-sm leading-relaxed text-cream",
+						children: indoorWarning
+					})]
+				})
+			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("details", {
-				className: "border-y border-cream/15 px-4 py-1 sm:px-6",
+				className: "border-b border-cream/15 px-4 py-1 sm:px-6",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("summary", {
 					className: "mx-auto flex min-h-11 max-w-6xl items-center text-sm leading-snug",
 					children: "Practice outdoors, only where a fire is legal. Water before flame."
@@ -1880,12 +2055,15 @@ function Tinderbox() {
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("ul", {
 						className: "flex max-w-prose list-disc flex-col gap-2 pl-4",
 						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Burn bans, campground rules, and the landowner all count. If you are unsure, do not light it." }),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Clear to mineral soil or use a fire pan. No low branches. No dry grass. On a windy or crackling-dry day, practice motions with no flame." }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "An adult is always in charge of the fire. Children may gather wood and build cold lays. An adult holds the match, ferro rod, lighter, or lens." }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Keep pets and small children a safe distance from the fire and from hot pans and coals." }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Never leave a fire unattended." }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Keep fires well away from houses, decks, tents, fences, dry brush, and overhanging branches." }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Check local burn bans and permits every time. A ban means no flame practice that day." }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Clear to mineral soil or use a fire pan. On a windy or crackling-dry day, practice motions with no flame." }),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Set water beside you before the first spark. Extinguish by drowning, stirring, and drowning again. Cold to the back of the hand." }),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Knives cut away from the body. Coals move on sticks, not fingers. A char-cloth tin can flare if you open it hot." }),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Chemical mixes, batteries shorted through steel wool, and homemade accelerants are not in this guide." }),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Teaching someone young: they may build cold lays. You hold the ignition." })
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Chemical mixes, batteries shorted through steel wool, and homemade accelerants are not in this guide." })
 						]
 					})
 				})]
@@ -1959,7 +2137,9 @@ function Tinderbox() {
 									const selected = entry.id === safeActive;
 									const status = lessons[entry.id]?.status ?? "new";
 									let groupLabel = null;
-									if (sort === "age") {
+									if (isPage(entry)) {
+										if (entry.id === pages[0]?.id) groupLabel = "This volume";
+									} else if (sort === "age") {
 										if (!isMethod(entry)) groupLabel = "Shared craft";
 										else {
 											const previousMethod = entries.slice(0, entries.indexOf(entry)).filter(isMethod).at(-1);
@@ -1988,7 +2168,7 @@ function Tinderbox() {
 													children: entry.name
 												}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 													className: cn("block text-sm", selected ? "text-ink-soft" : "text-cream-dim"),
-													children: isMethod(entry) ? entry.era : "Lays, tinder, and putting it out"
+													children: isMethod(entry) ? entry.era : isPage(entry) ? entry.navNote : "Lays, tinder, and putting it out"
 												})]
 											}),
 											/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Dot, {
@@ -2035,10 +2215,17 @@ function Tinderbox() {
 					]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
 					className: "min-w-0 px-4 py-4 sm:px-6 lg:overflow-y-auto lg:py-6 lg:pr-6 lg:pl-2",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Lesson, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-						className: "mx-auto mt-6 mb-10 max-w-prose text-sm leading-relaxed text-cream-dim",
-						children: "The newest method is not the best one. It is only the latest. Know one flame, and one spark that still works when the battery is dead."
-					})]
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Lesson, {}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "mx-auto mt-6 mb-4 max-w-prose text-sm leading-relaxed text-cream-dim",
+							children: "The newest method is not the best one. It is only the latest. Know one flame, and one spark that still works when the battery is dead."
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "mx-auto mb-10 max-w-prose text-sm leading-relaxed text-cream-dim",
+							children: "Privacy: This guide does not collect your name, email, or any personal information. Your practice log is saved only on your own device."
+						})
+					]
 				})]
 			})
 		]

@@ -12,10 +12,10 @@ var install_page_default = "<!DOCTYPE html>\n<html lang=\"en\" class=\"device-de
 //#endregion
 //#region \0virtual:grok-og-identity
 var grokOgIdentity = { "site": {
-	"title": "Tinderbox",
+	"title": "Making Fire: Tinderbox",
 	"card": "custom",
 	"color": "1C1712",
-	"description": "A field guide to making fire, from the oldest methods to the newest.",
+	"description": "A practice guide to building a fire, from the oldest methods to the newest. Read the line in historical order, then drill the craft.",
 	"image": "/og.jpg"
 } };
 //#endregion

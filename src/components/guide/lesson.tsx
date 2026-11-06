@@ -4,8 +4,10 @@ import {
   difficultyLabel,
   findEntry,
   ignitionLabel,
+  indoorWarning,
   isMethod,
-  lineEntries,
+  isPage,
+  readingOrder,
   methods,
   type Method,
 } from "@/data/guide";
@@ -230,10 +232,80 @@ export function Lesson() {
     headingRef.current?.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
   }, [entry.id]);
 
-  const entries = lineEntries(sort);
+  const entries = readingOrder(sort);
   const index = entries.findIndex((item) => item.id === entry.id);
   const prev = index > 0 ? entries[index - 1] : undefined;
   const next = index >= 0 && index < entries.length - 1 ? entries[index + 1] : undefined;
+
+  const pager = (
+    <nav className="mt-8 flex flex-col gap-2 border-t border-ink/10 pt-4 sm:flex-row sm:justify-between" aria-label="Along the line">
+      {prev ? (
+        <button type="button" className="btn btn-quiet w-full sm:w-auto" onClick={() => setActive(prev.id)}>
+          <ChevronLeft className="size-4" aria-hidden />
+          {prev.name}
+        </button>
+      ) : (
+        <span className="hidden sm:block" />
+      )}
+      {next ? (
+        <button type="button" className="btn btn-ember w-full sm:ml-auto sm:w-auto" onClick={() => setActive(next.id)}>
+          {next.name}
+          <ChevronRight className="size-4" aria-hidden />
+        </button>
+      ) : null}
+    </nav>
+  );
+
+  if (isPage(entry)) {
+    return (
+      <article id="lesson-top" key={entry.id} className="lesson-swap scroll-mt-24 rounded-xl bg-cream text-ink shadow-sheet">
+        <header className="border-b border-ink/10 px-5 py-6 sm:px-8">
+          <p className="text-sm font-semibold tracking-widest text-ember-deep uppercase">This volume</p>
+          <h2 ref={headingRef} tabIndex={-1} className="mt-2 font-display text-4xl outline-none sm:text-5xl">
+            {entry.name}
+          </h2>
+          <p className="mt-2 font-display text-xl text-ink-soft italic">{entry.epithet}</p>
+          <p className="mt-4 max-w-prose text-lg leading-relaxed">{entry.summary}</p>
+          <div className="mt-6 flex flex-wrap items-center gap-2">
+            <span className="rounded-md bg-cream-2 px-3 py-2 text-sm font-semibold">{statusLabel[status]}</span>
+            {status === "new" ? (
+              <button type="button" className="btn btn-quiet" onClick={() => markStudied(entry.id)}>
+                Mark as read
+              </button>
+            ) : null}
+          </div>
+        </header>
+        <div className="px-5 py-6 sm:px-8">
+          {entry.sections.map((section) => (
+            <section key={section.title} className="mt-8 first:mt-0">
+              <h3 className="font-display text-2xl">{section.title}</h3>
+              {section.items ? (
+                section.ordered ? (
+                  <ol className="mt-3 flex max-w-prose list-decimal flex-col gap-2 pl-5 leading-relaxed">
+                    {section.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ol>
+                ) : (
+                  <ul className="mt-3 flex max-w-prose list-disc flex-col gap-2 pl-5 leading-relaxed">
+                    {section.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                )
+              ) : null}
+              {section.paragraphs?.map((paragraph) => (
+                <p key={paragraph.slice(0, 24)} className="mt-3 max-w-prose leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </section>
+          ))}
+          {pager}
+        </div>
+      </article>
+    );
+  }
 
   return (
     <article id="lesson-top" key={entry.id} className="lesson-swap scroll-mt-24 rounded-xl bg-cream text-ink shadow-sheet">
@@ -277,7 +349,11 @@ export function Lesson() {
           <p className="max-w-prose leading-relaxed text-ink-soft">{method.place}</p>
         ) : (
           <div>
-            <h3 className="font-display text-2xl">Read by age. Practice by this path.</h3>
+            <p className="max-w-prose border-l-2 border-ember-deep bg-cream-2 px-4 py-3 text-sm leading-relaxed">
+              <span className="font-semibold tracking-wide uppercase">Never burn indoors. </span>
+              {indoorWarning}
+            </p>
+            <h3 className="mt-8 font-display text-2xl">Read by age. Practice by this path.</h3>
             <p className="mt-2 max-w-prose leading-relaxed">
               The line runs oldest to newest. That is the history. If you practice in that same order, you will spend the first day failing a hand drill and learning nothing about fire. Build the lays, light them with an easy flame, then earn the older tools.
             </p>
@@ -374,22 +450,7 @@ export function Lesson() {
         <SectionTitle>Practice log</SectionTitle>
         <PracticeLog id={entry.id} />
 
-        <nav className="mt-8 flex flex-col gap-2 border-t border-ink/10 pt-4 sm:flex-row sm:justify-between" aria-label="Along the line">
-          {prev ? (
-            <button type="button" className="btn btn-quiet w-full sm:w-auto" onClick={() => setActive(prev.id)}>
-              <ChevronLeft className="size-4" aria-hidden />
-              {prev.name}
-            </button>
-          ) : (
-            <span className="hidden sm:block" />
-          )}
-          {next ? (
-            <button type="button" className="btn btn-ember w-full sm:ml-auto sm:w-auto" onClick={() => setActive(next.id)}>
-              {next.name}
-              <ChevronRight className="size-4" aria-hidden />
-            </button>
-          ) : null}
-        </nav>
+        {pager}
       </div>
     </article>
   );

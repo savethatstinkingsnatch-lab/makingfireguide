@@ -90,7 +90,7 @@ export const craft: Craft = {
     },
     {
       title: "Put it out like you mean it",
-      body: "Drown, stir, drown. Feel for heat with the back of your hand, close, but not in the ash. Cold means cold, not 'I don't see a glow.' Scatter only if the place asks you to. Pack out what you carried in.",
+      body: "Drown, stir, drown. Feel for heat with the back of your hand, close, but not in the ash. Cold means cold, not 'I don't see a glow.' Scatter only if the place asks you to. Pack out what you carried in. Never leave a fire, even a small one, without a person watching it. If you have to walk away, put it out first. Drown, stir, drown, and feel for cold with the back of your hand.",
     },
   ],
   faults: [
@@ -653,7 +653,7 @@ export const methods: Method[] = [
       ],
       success: "Smoke from a spot you held still, or a clear note that the day was never going to work.",
     },
-    caution: "The focal spot can burn skin and can land somewhere you did not intend if you swing the lens around. Cap it or pocket it when you are not using it. Do not look through it at the sun.",
+    caution: "The focal spot can burn skin and can land somewhere you did not intend if you swing the lens around. Cap it or pocket it when you are not using it. Do not look through it at the sun. A magnifying glass can burn skin in seconds. Cap it or keep it in a sleeve when you are not using it. Do not leave it where sun can shine through it onto cloth, a car seat, or dry grass. A flat signal mirror is for flashing help. It is not a fire starter by itself.",
   },
   {
     id: "piston",
@@ -825,7 +825,7 @@ export const methods: Method[] = [
       success: "Three controlled lights with the safe stroke, and one of them not from petroleum jelly.",
     },
     caution:
-      "A knife spine is still steel. Know where it would go if it slipped. Magnesium bars, the camping blocks that are half soft metal and half ferro rod, throw shavings that burn white-hot. Scrape them away from you, a small pile only, and do not stare from an inch away. No dry grass around that pile.",
+      "A knife spine is still steel. Know where it would go if it slipped. Scrape so sparks fly away from your face, not toward your eyes. Wear eye protection if sparks come toward you. Magnesium bars, the camping blocks that are half soft metal and half ferro rod, throw shavings that burn white-hot. Scrape them away from you, a small pile only, and do not stare from an inch away. No dry grass around that pile.",
   },
   {
     id: "lighter",
@@ -944,8 +944,124 @@ export const methods: Method[] = [
   },
 ];
 
-export function isMethod(entry: Craft | Method): entry is Method {
+export const indoorWarning =
+  "Never light charcoal, a hibachi, a campfire, or any open flame indoors, in a tent, in a camper, or in a garage. Burning charcoal and wood make carbon monoxide, a gas you cannot see or smell, and it can kill people and pets. Cook and burn only outdoors with fresh air. A carbon monoxide alarm is for the house. It is not permission to burn charcoal inside.";
+
+export type GuideSection = {
+  title: string;
+  paragraphs?: string[];
+  items?: string[];
+  ordered?: boolean;
+};
+
+export type GuidePage = {
+  id: string;
+  name: string;
+  epithet: string;
+  navNote: string;
+  summary: string;
+  sections: GuideSection[];
+};
+
+export const pages: GuidePage[] = [
+  {
+    id: "start",
+    name: "Start here",
+    epithet: "Seven steps before you chase an older method.",
+    navNote: "First visit",
+    summary: "New to making fire? Read this page, then the craft chapter. The whole guide is free.",
+    sections: [
+      {
+        title: "New to making fire?",
+        ordered: true,
+        items: [
+          "Read the craft chapter first.",
+          "Check burn rules for your place today.",
+          "Set water down before anything sparks.",
+          "Build the tinder, kindling, and fuel piles before you light.",
+          "Practice one easy method (match or ferro rod) until it is boring.",
+          "Only then try older methods.",
+          "Put every fire all the way out.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "kit",
+    name: "Starter kit",
+    epithet: "What belongs in a beginner box for this volume.",
+    navNote: "Membership boxes",
+    summary:
+      "A good beginner kit for this volume. Practice the craft chapter with this kit before you try friction methods.",
+    sections: [
+      {
+        title: "A good beginner kit for this volume",
+        items: [
+          "A ferrocerium rod with a scraper (works when wet; easy to mail).",
+          "Storm or 'forever' matches in a waterproof case, OR skip mailed matches and use the ferro rod (see Shipping note).",
+          "Dry tinder: cotton balls, jute twine, cedar curls, or commercial tinder tabs that are legal to ship.",
+          "A small signal mirror.",
+          "A magnifying glass with a cover.",
+          "A printed safety card: water first, clear ground, adult in charge, drown-stir-drown, never burn indoors.",
+        ],
+        paragraphs: [
+          "Practice the craft chapter with this kit before you try friction methods.",
+        ],
+      },
+      {
+        title: "Shipping / hazmat",
+        paragraphs: [
+          "If you mail kit boxes in the United States, matches and many solid fuel tabs are often treated as hazardous materials and may not go in ordinary USPS mail. Rules change, so check USPS Publication 52 and your shipper before you pack a box. Ferro rods, cotton or jute tinder, signal mirrors, and covered magnifying glasses are usually the safer items to mail. Sell matches or fuel tabs only through a shipper that allows them, or as local pickup. Never put lighter fluid or loose lithium batteries in a surprise box.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "glossary",
+    name: "Glossary",
+    epithet: "The words this guide uses, in plain language.",
+    navNote: "Words",
+    summary: "Short meanings for the words you will meet in the lessons.",
+    sections: [
+      {
+        title: "Words",
+        items: [
+          "Tinder: the finest, fluffiest dry material that catches a spark or coal.",
+          "Kindling: pencil- to thumb-thick dry sticks that take the flame from the tinder.",
+          "Fuel: the larger wood that keeps the fire going.",
+          "Coal / ember: a glowing piece of fuel without a flame.",
+          "Lay: how you stack the wood (teepee, lean-to, top-down).",
+          "Ferrocerium (ferro rod): a man-made spark metal used in modern rods and lighter 'flints'.",
+          "Char cloth: cotton or linen cooked in a tin until it catches a spark easily.",
+          "Burn ban: a rule that forbids open flames for a time or place.",
+          "Carbon monoxide: a deadly gas from burning charcoal or fuel with too little air.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "about",
+    name: "About",
+    epithet: "What this volume is, and what it is not.",
+    navNote: "Disclaimer",
+    summary: "Part of The Education Revolution pocket guide series.",
+    sections: [
+      {
+        title: "About and disclaimer",
+        paragraphs: [
+          "This pocket guide is for learning outdoors where fire is legal. It is not a permit, and it is not a substitute for local fire rules. You are responsible for every fire you light. Blue and the Awesome Dudes are not responsible for burns, wildfire, property damage, injury, or death. Part of The Education Revolution pocket guide series.",
+        ],
+      },
+    ],
+  },
+];
+
+export function isMethod(entry: Craft | Method | GuidePage): entry is Method {
   return "number" in entry;
+}
+
+export function isPage(entry: Craft | Method | GuidePage): entry is GuidePage {
+  return "sections" in entry;
 }
 
 export function lineEntries(sort: "age" | "practice"): Array<Craft | Method> {
@@ -953,7 +1069,13 @@ export function lineEntries(sort: "age" | "practice"): Array<Craft | Method> {
   return [craft, ...[...methods].sort((a, b) => a.practiceRank - b.practiceRank)];
 }
 
-export function findEntry(id: string): Craft | Method {
+export function readingOrder(sort: "age" | "practice"): Array<GuidePage | Craft | Method> {
+  return [...pages, ...lineEntries(sort)];
+}
+
+export function findEntry(id: string): GuidePage | Craft | Method {
+  const page = pages.find((item) => item.id === id);
+  if (page) return page;
   if (id === craft.id) return craft;
   return methods.find((method) => method.id === id) ?? craft;
 }
