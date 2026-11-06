@@ -355,7 +355,7 @@ export function Lesson() {
             </p>
             <h3 className="mt-8 font-display text-2xl">Read by age. Practice by this path.</h3>
             <p className="mt-2 max-w-prose leading-relaxed">
-              The line runs oldest to newest. That is the history. If you practice in that same order, you will spend the first day failing a hand drill and learning nothing about fire. Build the lays, light them with an easy flame, then earn the older tools.
+              The line is an approximate order, from older ideas toward newer ones. Methods overlap in time, so the sequence is a way to read, not a proof of what came first. If you practice in that same order, you will spend the first day failing a hand drill and learning nothing about fire. Build the lays, light them with an easy flame, then earn the older tools. The kept-fire lesson is history and a cold drill, not a live coal you carry.
             </p>
             <PracticeOrder />
           </div>

@@ -7,8 +7,8 @@
       "status": 200,
       "title": "Making Fire: Tinderbox",
       "hasCanvas": false,
-      "bodyTextLen": 7703,
-      "bodyTextHash": "99b50e4d357d07edc353e97d570e422ab544905eec841ab625603be3ca731fc9",
+      "bodyTextLen": 8775,
+      "bodyTextHash": "5f09f7c860ff3c25c31b2789b40f56b1858c034e705da8be34188beee06effce",
       "bodyTextPrefix": "Skip to the lesson FIELD GUIDE Tinderbox 0 of 14 practiced The E",
       "horizontalOverflow": false,
       "consoleErrors": [],
@@ -21,8 +21,8 @@
       "status": 200,
       "title": "Making Fire: Tinderbox",
       "hasCanvas": false,
-      "bodyTextLen": 7089,
-      "bodyTextHash": "d29c5e106a892d7c40f35b70e252e9c4f6b4515932931715609b7f94dcc3625e",
+      "bodyTextLen": 8161,
+      "bodyTextHash": "2273a1affd53b9861c83082a36a92648bfbaa642149c7628278444fce7f66370",
       "bodyTextPrefix": "Skip to the lesson FIELD GUIDE Tinderbox 0 of 14 practiced The E",
       "horizontalOverflow": false,
       "consoleErrors": [],
@@ -33,6 +33,9 @@
   "brandWarnings": [],
   "authWarnings": [],
   "verdictFile": "/workspace/screenshots/app-builder-built.json",
-  "divergesFromBaseline": false,
-  "baselineReasons": []
+  "divergesFromBaseline": true,
+  "baselineReasons": [
+    "desktop: body text changed (7703 -> 8775 chars, hash mismatch)",
+    "mobile: body text changed (7089 -> 8161 chars, hash mismatch)"
+  ]
 }

@@ -2,7 +2,7 @@ import { i as __toESM } from "../_runtime.mjs";
 import { K as require_react, b as require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
 import { i as Check, n as ChevronRight, r as ChevronLeft } from "../_libs/lucide-react.mjs";
 import { n as create, t as persist } from "../_libs/zustand.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-B5CwOyJh.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-clzgezCr.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var difficultyLabel = [
@@ -14,7 +14,7 @@ var difficultyLabel = [
 	"Severe"
 ];
 var ignitionLabel = {
-	carried: "Carried coal",
+	carried: "Kept coal",
 	spark: "Spark",
 	coal: "Friction coal",
 	sun: "Focused sunlight",
@@ -52,11 +52,15 @@ var craft = {
 	kit: [
 		{
 			item: "A legal place",
-			note: "Bare soil or a fire pan. If you are not sure the fire is allowed, it is not."
+			note: "An existing, designated fire ring when one is there. A fire pan only where the site allows it. Bare soil is not a free pass. If you are not sure the fire is allowed, it is not."
 		},
 		{
-			item: "Water",
-			note: "A full bottle or pot, set down before you light anything."
+			item: "Enough water",
+			note: "More than one bottle. A full bottle may not put a fire out. Set the water down before you light anything."
+		},
+		{
+			item: "A shovel",
+			note: "To stir ashes, coals, and sticks while you drown the fire."
 		},
 		{
 			item: "Tinder",
@@ -78,7 +82,7 @@ var craft = {
 	steps: [
 		{
 			title: "Choose the ground",
-			body: "Mineral soil, not duff, not roots, not a stump. Clear a circle wider than the fire will be. Look up: no low branches. Look around: nothing that can catch a spark and walk away. Wind at your back, or a rock or log on the windward side."
+			body: "Prefer an existing, designated fire ring. Do not start a new scar, and do not treat any cleared patch as suitable. Where no ring exists, a fire pan is the alternative only if the site allows it, on mineral soil, not duff, not roots, not a stump. Look up: no low branches. Look around: nothing that can catch a spark. If the day is hazardously dry or windy, skip the flame. The Forest Service advises using an existing ring and not making fires in those conditions. Practice the lays cold instead."
 		},
 		{
 			title: "Build the ladder before the flame",
@@ -94,7 +98,7 @@ var craft = {
 		},
 		{
 			title: "Put it out like you mean it",
-			body: "Drown, stir, drown. Feel for heat with the back of your hand, close, but not in the ash. Cold means cold, not 'I don't see a glow.' Scatter only if the place asks you to. Pack out what you carried in. Never leave a fire, even a small one, without a person watching it. If you have to walk away, put it out first. Drown, stir, drown, and feel for cold with the back of your hand."
+			body: "Drown the fire thoroughly. Stir the ashes, coals, and sticks with a shovel, then add water and stir again. Keep going until everything is cold. Do not put a hand close to the ash to check. Do not bury coals or cover them with dirt or sand. Buried embers can keep smoldering. That is the National Park Service method: water, stir, more water, until it is cold, and never buried. Never leave a fire, even a small one, without a person watching it. If you have to walk away, put it out first."
 		}
 	],
 	faults: [
@@ -117,7 +121,7 @@ var craft = {
 	],
 	drill: {
 		title: "Three cold lays",
-		goal: "Build a teepee, a lean-to, and a top-down lay without lighting them. Then, where fire is legal, light one teepee with the easiest flame you have.",
+		goal: "Build a teepee, a lean-to, and a top-down lay without lighting them. Then, where fire is legal and the day is not hazardously dry or windy, light one teepee with the easiest flame you have.",
 		steps: [
 			"Gather and sort tinder, kindling, and fuel into three piles before you touch an ignition.",
 			"Build each lay, take it apart, and build it again until your hands know the order.",
@@ -125,87 +129,87 @@ var craft = {
 		],
 		success: "You can build all three lays without looking them up, and one of them burns on a single ignition."
 	},
-	caution: "If the day is windy, or the country is dry enough to crackle, practice the lays and the motions with no flame. A drill is not worth a wildfire. Chemical mixes, batteries shorted through steel wool, and homemade accelerants are left off this guide on purpose. They injure people and they do not teach a fire you can repeat."
+	caution: "If the day is windy, or the country is dry enough to crackle, practice the lays and the motions with no flame. Skip flame practice in hazardous dry or windy conditions. A drill is not worth a wildfire. Chemical mixes, batteries shorted through steel wool, and homemade accelerants are left off this guide on purpose. They injure people and they do not teach a fire you can repeat."
 };
 var methods = [
 	{
 		id: "kept",
 		number: 1,
 		name: "Kept fire",
-		epithet: "The coal you do not let die.",
+		epithet: "A history of not letting the coal die.",
 		eraGroup: "before",
 		era: "Deep prehistory",
 		circa: "As old as the use of fire",
 		origin: "Everywhere a camp moved",
 		difficulty: 2,
 		ignition: "carried",
-		weather: "A sheltered coal shrugs off rain better than any unlit kit. Wind can feed it or strip it.",
-		learn: "An afternoon to understand. Longer to trust on a walk.",
+		weather: "Historically, a sheltered coal could ride out rain better than an unlit kit. Wind could feed it or strip it. This guide does not practice that carry.",
+		learn: "Read it as history. The drill is a cold walk with an unlit nest.",
 		practiceRank: 8,
-		summary: "The oldest fire skill is not making fire. It is not losing it. Before a reliable spark, people carried a coal in punk, fungus, or bark and woke it at the next hearth.",
-		principle: "A coal is already burning. You are only balancing air and fuel so it smolders instead of flaming or dying.",
-		place: "It sits first because keeping fire had to exist before anyone could count on making it. Hearths survive in the ground. The first fire-making tool mostly does not. Where the record is thin, this guide says so.",
+		summary: "The oldest fire skill is not making fire. It is not losing it. Before a reliable spark, people carried a coal in punk, fungus, or bark and woke it at the next hearth. That is context. This lesson does not teach you to walk with a live ember.",
+		principle: "A coal is already burning. Historically, the skill was balancing air and fuel so it smoldered instead of flaming or dying. A carried coal can also drop, flare, or smolder into a fire you did not mean to start.",
+		place: "It sits first because keeping fire had to exist before anyone could count on making it. Hearths survive in the ground. The first fire-making tool mostly does not. Where the record is thin, this guide says so. The steps below are a cold simulation of that history.",
 		kit: [
 			{
-				item: "A coal you already have a right to",
-				note: "From a legal fire. This method does not start a fire. It moves one."
+				item: "An unlit stand-in",
+				note: "A pebble or a cold piece of charcoal. Not a glowing coal."
 			},
 			{
 				item: "Dry punk or crushed rotten hardwood",
-				note: "Soft, dry, not green. Or a slice of horse-hoof fungus from dead wood, where taking it is allowed."
+				note: "Soft, dry, not green. Used here only as packing for the cold nest."
 			},
 			{
 				item: "A wrap",
-				note: "Fibrous bark or dry grass around the punk, loose enough to breathe."
+				note: "Fibrous bark or dry grass around the punk, loose enough that you can see how air would move."
 			},
 			{
-				item: "Tongs or two sticks",
-				note: "Fingers are a bad coal carrier. A glove can smolder after you think you are done."
+				item: "No live ember",
+				note: "Do not lift a coal out of a fire for this lesson. Do not walk with one."
 			}
 		],
 		steps: [
 			{
-				title: "Build the nest first",
-				body: "Make the nest, and a spare, before you lift the coal. A pad of dry punk, then a looser bark wrap. Set the next teepee where you mean to wake the fire, even if that place is ten steps away."
+				title: "Read what people did",
+				body: "Historically, a camp that moved might set a glowing coal into dry punk, wrap it in bark or grass, and try to wake it at the next hearth. The balance was a glow and a thread of smoke: too tight and it died, too loose and it flamed. Knowing that explains the record. It is not a drill to copy with a live coal."
 			},
 			{
-				title: "Move one coal",
-				body: "Lift a single glowing coal with sticks onto the punk. It should sit in the middle, touching dry fuel, with a little air around it. You want a glow and a thread of smoke, not a flame and not darkness."
+				title: "Build a cold nest",
+				body: "Make the nest, and a spare, with dry punk and a bark wrap. Put the pebble or cold charcoal in the middle. Set an unlit teepee where a hearth would have been, even if that place is ten steps away. Nothing in the nest is burning."
 			},
 			{
-				title: "Carry it and look at it",
-				body: "Walk. Check four times in fifteen minutes. Thin smoke and a glow is right. No smoke and no glow means it is suffocating: loosen the wrap. A tongue of flame means too much air: close it, or put it down in the pit and use it."
+				title: "Walk the loop unlit",
+				body: "Carry the cold nest. Stop four times. At each stop, say whether you would loosen the wrap or close it, and why. You are rehearsing the checks. You are not tending a fire in your hands."
 			},
 			{
-				title: "Wake it",
-				body: "At the next legal hearth, open the nest into the teepee and blow it into flame. Drown the place you took the coal from until that ash is cold too."
+				title: "Talk through the waking",
+				body: "At the teepee, set the nest down and say how a historical coal would have been opened into the lay and blown to flame, and how the old hearth would have been drowned until cold. Leave this teepee unlit. Do not finish the lesson by lighting the nest."
 			}
 		],
 		faults: [
 			{
-				problem: "Dead in the first minute.",
-				fix: "The punk was damp, or you packed it like a fist. Loosen it. Dry punk only."
+				problem: "The story skips the danger.",
+				fix: "A live coal in punk can flare, fall out of the wrap, or smolder after you think it is out. That is why this lesson stays cold."
 			},
 			{
-				problem: "It flames in your hands.",
-				fix: "Too much air, or the punk was rich with resin. Close the wrap or set it in the pit. Do not walk with an open flame in bark."
+				problem: "You want to try it with a real coal.",
+				fix: "Don't. Beginners do not practice by walking with an ember. Keep the coal in a fire ring, or put the fire out."
 			},
 			{
-				problem: "Fine when you looked, dead at camp.",
-				fix: "You looked once. Coals lie. Open the nest on a schedule."
+				problem: "The cold walk felt pointless.",
+				fix: "The point is the checks: air, fuel, and a hearth that is already built. You can name those without carrying heat."
 			}
 		],
 		drill: {
-			title: "Fifteen minutes of coal",
-			goal: "Keep one coal visibly glowing for fifteen minutes, then wake it. If you cannot have a fire today, build the nest and walk the loop anyway.",
+			title: "A cold carry",
+			goal: "Rehearse the historical carry with an unlit nest. Do not walk with a live ember.",
 			steps: [
-				"Prepare two nests and the receiving teepee before the coal moves.",
-				"Walk a short loop. Stop and look four times.",
-				"Wake it into the teepee, or, on a cold drill, say out loud whether you would loosen or close the wrap."
+				"Pack a nest with dry punk or bark and a cold stand-in, such as a pebble.",
+				"Walk a short loop. Stop four times and say whether you would loosen or close the wrap.",
+				"At the end, set the nest down and talk through waking a coal into a teepee that is already built. Leave it unlit."
 			],
-			success: "The coal is alive at minute fifteen, or you can explain each check you would have made."
+			success: "You can describe each check, and you never carried a glowing coal."
 		},
-		caution: "You are handling a live ember. Sticks, not fingers. Water is already at the pit."
+		caution: "This lesson is history and a cold drill. Do not walk with a live ember, even a small one. A carried coal can flare, drop, or smolder into an uncontrolled fire. Beginners practice the motions unlit. Water and a shovel stay with any fire you do light, in a ring, and that fire is put out before anyone leaves."
 	},
 	{
 		id: "pyrite",
@@ -887,11 +891,11 @@ var methods = [
 			},
 			{
 				title: "One stroke",
-				body: "Drive the piston home in one motion. Hesitation leaks the heat. Hold it down for about one breath. Draw it back smoothly. Yanking it out can blow the ember away. Look for a glow the size of a seed."
+				body: "Drive the piston home in one fast stroke. Hesitation leaks the heat. Withdraw the piston promptly and transfer the glowing tinder at once. Do not hold it down for a breath. Draw it back smoothly rather than yanking, which can scatter the ember, then move the glow into the nest. Follow the device maker's instructions for that piston."
 			},
 			{
 				title: "Move it now",
-				body: "Tip the ember into the nest immediately and blow it up. If you set the piston down to admire it, you will come back to ash."
+				body: "Tip the ember into the nest immediately and blow it up. The transfer happens as soon as the piston is back, not after a pause. If you set the piston down to admire it, you will come back to ash."
 			}
 		],
 		faults: [
@@ -927,14 +931,14 @@ var methods = [
 		epithet: "Fire tucked into a stick, at last.",
 		eraGroup: "modern",
 		era: "1826, and then the safety match",
-		circa: "John Walker, 1826. Safety match, Gustaf Erik Pasch, 1844.",
+		circa: "John Walker, developed 1826, sold from April 1827. Safety match, Gustaf Erik Pasch, 1844.",
 		origin: "England, then Sweden for the safety match you still know",
 		difficulty: 1,
 		ignition: "flame",
 		weather: "Wind is the enemy. Damp heads are a dead kit. A storm match buys you a few extra seconds.",
 		learn: "The strike is trivial. One-match fires are a real skill.",
 		practiceRank: 2,
-		summary: "In 1826 John Walker, a chemist in Stockton-on-Tees, sold wooden splints tipped so they lit when drawn through a fold of sandpaper. They could flare and drop burning bits. White-phosphorus matches came next and poisoned the workers who made them. In 1844 Gustaf Erik Pasch moved the phosphorus to the strip on the box. The Lundström brothers in Sweden made that safety match a product in the 1850s. A safety match lights on its box. A strike-anywhere match lights on a rough surface, and also in a pocket if you are unlucky.",
+		summary: "John Walker, a chemist in Stockton-on-Tees, developed the friction match in 1826. The Science Museum Group says he began selling the wooden splints in April 1827. They lit when drawn through a fold of sandpaper. They could flare and drop burning bits. White-phosphorus matches came next and poisoned the workers who made them. In 1844 Gustaf Erik Pasch moved the phosphorus to the strip on the box. The Lundström brothers in Sweden made that safety match a product in the 1850s. A safety match lights on its box. A strike-anywhere match lights on a rough surface, and also in a pocket if you are unlucky.",
 		principle: "The head is already a complete fuel-and-oxidizer mix. Friction supplies the little heat that sets it off. Your skill is not the chemistry. It is having a fire ready to receive a flame that lasts a few seconds.",
 		place: "This is the break in the line. Everything before it makes a coal or a spark you must nurse. From here on, a manufactured flame is the starting point, and the old skills become backups and crafts rather than the daily way.",
 		kit: [
@@ -1209,7 +1213,7 @@ var methods = [
 		caution: "An arc will bite skin and will light fumes you did not mean to light, including stove fuel in a tent. Keep it off until it is at the tinder. Do not carry a lithium battery loose with keys and coins. A piezo lighter is still a fuel lighter: no pouring, no leaking, no flame in a fuel cloud."
 	}
 ];
-var indoorWarning = "Never light charcoal, a hibachi, a campfire, or any open flame indoors, in a tent, in a camper, or in a garage. Burning charcoal and wood make carbon monoxide, a gas you cannot see or smell, and it can kill people and pets. Cook and burn only outdoors with fresh air. A carbon monoxide alarm is for the house. It is not permission to burn charcoal inside.";
+var indoorWarning = "Never light charcoal, a hibachi, a campfire, a fuel-burning stove, a lantern, a gas or propane device, or any open flame indoors, in a tent, in a camper, or in a garage. Burning charcoal, wood, and other fuels make carbon monoxide, a gas you cannot see or smell, and it can kill people and pets. Cook and burn only outdoors with fresh air. A carbon monoxide alarm is for the house. It is not permission to burn fuel inside.";
 var pages = [
 	{
 		id: "start",
@@ -1222,12 +1226,12 @@ var pages = [
 			ordered: true,
 			items: [
 				"Read the craft chapter first.",
-				"Check burn rules for your place today.",
-				"Set water down before anything sparks.",
+				"Check burn rules for your place today. Use an existing fire ring when one is there.",
+				"Set enough water and a shovel down before anything sparks.",
 				"Build the tinder, kindling, and fuel piles before you light.",
 				"Practice one easy method (match or ferro rod) until it is boring.",
 				"Only then try older methods.",
-				"Put every fire all the way out."
+				"Put every fire all the way out. Drown and stir until it is cold. Do not bury it."
 			]
 		}]
 	},
@@ -1245,12 +1249,12 @@ var pages = [
 				"Dry tinder: cotton balls, jute twine, cedar curls, or commercial tinder tabs that are legal to ship.",
 				"A small signal mirror.",
 				"A magnifying glass with a cover.",
-				"A printed safety card: water first, clear ground, adult in charge, drown-stir-drown, never burn indoors."
+				"A printed safety card: enough water and a shovel, existing fire ring, adult in charge, drown and stir until cold, never bury coals, never burn indoors."
 			],
 			paragraphs: ["Practice the craft chapter with this kit before you try friction methods."]
 		}, {
 			title: "Shipping / hazmat",
-			paragraphs: ["If you mail kit boxes in the United States, matches and many solid fuel tabs are often treated as hazardous materials and may not go in ordinary USPS mail. Rules change, so check USPS Publication 52 and your shipper before you pack a box. Ferro rods, cotton or jute tinder, signal mirrors, and covered magnifying glasses are usually the safer items to mail. Sell matches or fuel tabs only through a shipper that allows them, or as local pickup. Never put lighter fluid or loose lithium batteries in a surprise box."]
+			paragraphs: ["If you mail kit boxes in the United States, check USPS Publication 52 and your shipper before you pack anything. The rules are specific, and they change. Safety matches may go in domestic mail only by surface transportation, and only when packed the way those rules require. Strike-anywhere matches are nonmailable. Fuel tabs are not one category: whether a tab may be mailed depends on that product and the rules that apply to it. Ferro rods, cotton or jute tinder, signal mirrors, and covered magnifying glasses are usually the safer items to mail. Never put lighter fluid or loose lithium batteries in a surprise box."]
 		}]
 	},
 	{
@@ -1270,7 +1274,7 @@ var pages = [
 				"Ferrocerium (ferro rod): a man-made spark metal used in modern rods and lighter 'flints'.",
 				"Char cloth: cotton or linen cooked in a tin until it catches a spark easily.",
 				"Burn ban: a rule that forbids open flames for a time or place.",
-				"Carbon monoxide: a deadly gas from burning charcoal or fuel with too little air."
+				"Carbon monoxide: a deadly gas from burning charcoal, wood, or other fuel with too little air, including stoves, lanterns, and gas or propane devices."
 			]
 		}]
 	},
@@ -1801,7 +1805,7 @@ function Lesson() {
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "mt-2 max-w-prose leading-relaxed",
-						children: "The line runs oldest to newest. That is the history. If you practice in that same order, you will spend the first day failing a hand drill and learning nothing about fire. Build the lays, light them with an easy flame, then earn the older tools."
+						children: "The line is an approximate order, from older ideas toward newer ones. Methods overlap in time, so the sequence is a way to read, not a proof of what came first. If you practice in that same order, you will spend the first day failing a hand drill and learning nothing about fire. Build the lays, light them with an easy flame, then earn the older tools. The kept-fire lesson is history and a cold drill, not a live coal you carry."
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PracticeOrder, {})
 				] }),
@@ -2026,7 +2030,7 @@ function Tinderbox() {
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 							className: "mt-3 max-w-xl leading-relaxed text-cream-dim",
-							children: "Fourteen ways to make a fire, set from the oldest to the newest. Read it as history. Practice it as a craft."
+							children: "Fourteen fire skills and ignition methods, in an order that is only approximate, because the methods overlap in time. Read it as history. Practice it as a craft."
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "mt-4 h-1 w-16 bg-ember" })
 					]
@@ -2060,9 +2064,9 @@ function Tinderbox() {
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Never leave a fire unattended." }),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Keep fires well away from houses, decks, tents, fences, dry brush, and overhanging branches." }),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Check local burn bans and permits every time. A ban means no flame practice that day." }),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Clear to mineral soil or use a fire pan. On a windy or crackling-dry day, practice motions with no flame." }),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Set water beside you before the first spark. Extinguish by drowning, stirring, and drowning again. Cold to the back of the hand." }),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Knives cut away from the body. Coals move on sticks, not fingers. A char-cloth tin can flare if you open it hot." }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Use an existing, designated fire ring where one is available. A fire pan only where the site allows it. Do not treat a cleared patch as a fire place. Skip flame practice in hazardous dry or windy conditions." }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Bring enough water and a shovel before the first spark. Drown the fire thoroughly, stir the ashes, coals, and sticks, then add water and stir again until everything is cold. Do not check by putting a hand close to the ash. Do not bury coals." }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Knives cut away from the body. In the ring, move sticks with sticks, not fingers. Do not walk off with a live coal. A char-cloth tin can flare if you open it hot." }),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Chemical mixes, batteries shorted through steel wool, and homemade accelerants are not in this guide." })
 						]
 					})

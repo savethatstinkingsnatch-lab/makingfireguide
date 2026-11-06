@@ -112,7 +112,7 @@ export function Tinderbox() {
           </p>
           <p className="text-sm text-cream-dim">by Blue and the Awesome Dudes</p>
           <p className="mt-3 max-w-xl leading-relaxed text-cream-dim">
-            Fourteen ways to make a fire, set from the oldest to the newest. Read it as history. Practice it as a craft.
+            Fourteen fire skills and ignition methods, in an order that is only approximate, because the methods overlap in time. Read it as history. Practice it as a craft.
           </p>
           <div className="mt-4 h-1 w-16 bg-ember" />
         </div>
@@ -136,9 +136,9 @@ export function Tinderbox() {
             <li>Never leave a fire unattended.</li>
             <li>Keep fires well away from houses, decks, tents, fences, dry brush, and overhanging branches.</li>
             <li>Check local burn bans and permits every time. A ban means no flame practice that day.</li>
-            <li>Clear to mineral soil or use a fire pan. On a windy or crackling-dry day, practice motions with no flame.</li>
-            <li>Set water beside you before the first spark. Extinguish by drowning, stirring, and drowning again. Cold to the back of the hand.</li>
-            <li>Knives cut away from the body. Coals move on sticks, not fingers. A char-cloth tin can flare if you open it hot.</li>
+            <li>Use an existing, designated fire ring where one is available. A fire pan only where the site allows it. Do not treat a cleared patch as a fire place. Skip flame practice in hazardous dry or windy conditions.</li>
+            <li>Bring enough water and a shovel before the first spark. Drown the fire thoroughly, stir the ashes, coals, and sticks, then add water and stir again until everything is cold. Do not check by putting a hand close to the ash. Do not bury coals.</li>
+            <li>Knives cut away from the body. In the ring, move sticks with sticks, not fingers. Do not walk off with a live coal. A char-cloth tin can flare if you open it hot.</li>
             <li>Chemical mixes, batteries shorted through steel wool, and homemade accelerants are not in this guide.</li>
           </ul>
         </div>
