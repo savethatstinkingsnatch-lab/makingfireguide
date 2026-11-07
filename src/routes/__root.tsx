@@ -3,7 +3,7 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "Making Fire: Tinderbox";
+const APP_NAME = "Volume 21: Making Fire (The Education Revolution)";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -14,7 +14,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "A practice guide to building a fire, from the oldest methods to the newest. Read the line in historical order, then drill the craft.",
+          "Volume 21 of The Education Revolution, by Blue and the Awesome Dudes. A practice guide to building a fire, from the oldest methods to the newest. Read the line in historical order, then drill the craft.",
       },
       { name: "theme-color", content: "#1a1612" },
     ],
